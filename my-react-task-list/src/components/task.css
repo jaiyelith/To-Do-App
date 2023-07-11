@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap');
+
+*{
+    background-color: whitesmoke;
+}
+h1{
+    font-family: 'Poppins', sans-serif;
+    color: violet;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;  
+    
+}
+
+.tareas-completadas {
+    text-decoration: line-through;
+    color: green;
+}
+.tareas-incompletas {
+    text-decoration: none;
+    color: red;
+}
