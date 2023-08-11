@@ -1,5 +1,5 @@
 import Task from "./Task";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function TaskList() {
   const [tasks, setTasks] = useState([
@@ -8,6 +8,20 @@ function TaskList() {
     { name: "Hacer mercado", status: true },
     { name: "Pagar recibos", status: false },
   ]);
+
+  useEffect(() => {
+    // Cargar tareas desde el localStorage al cargar la página
+    const tareasGuardadas = JSON.parse(localStorage.getItem("tasks"));
+    if (tareasGuardadas) {
+      setTasks(tareasGuardadas);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Almacenar tareas en el localStorage cada vez que cambien
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
 
   const handleTaskStatusChange = (index) => {
     setTasks((prevTasks) =>
