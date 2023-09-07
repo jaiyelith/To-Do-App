@@ -1,24 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap");
 
-*{
-    background-color: whitesmoke;
+* {
+  background-color: whitesmoke;
 }
-h1{
-    font-family: 'Poppins', sans-serif;
-    color: violet;
+h1 {
+  font-family: "Poppins", sans-serif;
+  color: violet;
 }
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: start;  
-    
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .tareas-completadas {
-    text-decoration: line-through;
-    color: green;
+  text-decoration: line-through;
+  color: rgb(85, 19, 74);
 }
 .tareas-incompletas {
-    text-decoration: none;
-    color: red;
+  text-decoration: none;
+  color: red;
 }
+
+.boton-guardar {
+  color: green;
+}
+
+.boton-editar {
+  color: mediumpurple;
+}
+
+.boton-cancelar {
+  color: red;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+ 
+.task-text {
+  display: flex;
+  align-items: center;
+}
+
+.task-text p {
+  margin: 0; 
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+}
+
+.task-input {
+  margin-right: 10px;
+}
+
+.boton-guardar,
+.boton-cancelar,
+.boton-editar,
+.boton-eliminar {
+  margin-left: 10px; 
+}
+
+  
