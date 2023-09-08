@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default function useTaskManager() {
   const [tasks, setTasks] = useState([]);
+
   const createTask = (newTask) => {
     setTasks([...tasks, newTask]);
   };

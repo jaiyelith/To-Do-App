@@ -5,21 +5,38 @@ import "./task.css";
 function Task({ task, onStatusChange, onDelete, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedTaskName, setUpdatedTaskName] = useState(task.name || "");
+  const [originalTaskName, setOriginalTaskName] = useState(task.name || "");
 
   const handleCheckboxChange = () => onStatusChange();
-  const handleDeleteClick = () => onDelete();
-  const handleEditClick = () => setIsEditing(true);
-  const handleCancelClick = () => {
-    setIsEditing(false);
-    setUpdatedTaskName(task.name || "");
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+    setOriginalTaskName(updatedTaskName);
   };
+
   const handleSaveClick = () => {
     if (updatedTaskName.trim() !== "") {
-      onUpdate(updatedTaskName);
+      onUpdate(updatedTaskName, task.description);
       setIsEditing(false);
     }
   };
+
+  const handleCancelClick = () => {
+    setUpdatedTaskName(originalTaskName);
+    setIsEditing(false);
+  };
+
   const handleInputChange = (e) => setUpdatedTaskName(e.target.value);
+
+  const handleDeleteClick = () => {
+    const confirmation = window.confirm(
+      "Si eliminas esta tarea luego no podrás revertir esta acción. ¿Estás seguro?"
+    );
+
+    if (confirmation) {
+      onDelete();
+    }
+  };
 
   return (
     <div className="task-container">
@@ -35,6 +52,7 @@ function Task({ task, onStatusChange, onDelete, onUpdate }) {
             value={updatedTaskName}
             onChange={handleInputChange}
             className="task-input"
+            autoFocus
           />
           <button className="boton-guardar" onClick={handleSaveClick}>
             Guardar
@@ -64,6 +82,7 @@ Task.propTypes = {
   task: PropTypes.shape({
     name: PropTypes.string,
     status: PropTypes.bool,
+    description: PropTypes.string,
   }).isRequired,
   onStatusChange: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,

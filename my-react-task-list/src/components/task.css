@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap");
 
-* {
-  background-color: whitesmoke;
+body {
+  background-color: #ffefb5;
 }
+
 h1 {
   font-family: "Poppins", sans-serif;
-  color: violet;
+  color: #ff4000; 
 }
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -15,23 +17,43 @@ h1 {
 
 .tareas-completadas {
   text-decoration: line-through;
-  color: rgb(85, 19, 74);
+  color: #260d0d;
 }
+
 .tareas-incompletas {
   text-decoration: none;
   color: red;
 }
 
-.boton-guardar {
-  color: green;
+.boton-guardar,
+.boton-editar,
+.boton-cancelar,
+.boton-eliminar {
+  background-color: #ffc803;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-.boton-editar {
-  color: mediumpurple;
+.limpiar-tareas{
+  background-color: #319190 ;
+  color: white
+}
+.boton-cancelar{
+  color: #ff4000;
 }
 
-.boton-cancelar {
-  color: red;
+button[type="submit"] {
+  margin-top: 10px;
+  margin-left: 10px; 
+  background-color: #ffc803; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 .task-container {
@@ -55,15 +77,21 @@ h1 {
   align-items: center;
 }
 
-.task-input {
-  margin-right: 10px;
+
+input[type="text"] {
+  margin-bottom: 10px;
+  border: 2px solid #ffc803; 
+  border-radius: 10px;
+  padding: 5px;
 }
 
-.boton-guardar,
-.boton-cancelar,
-.boton-editar,
-.boton-eliminar {
-  margin-left: 10px; 
+textarea {
+  border: 4px solid #319190; 
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 4px 4px 4px rgba(230, 203, 54, 0.7); 
 }
 
-  
+li{
+  list-style: none;
+}
