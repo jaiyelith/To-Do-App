@@ -95,3 +95,18 @@ textarea {
 li{
   list-style: none;
 }
+
+.titulo-sobre-nosotros {
+  color: #319190;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.subtitulo {
+  color: #319190;
+}
+
+h2{
+  color: #ff4000;
+  font-size: 30px;
+}
