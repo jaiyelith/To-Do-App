@@ -19,7 +19,7 @@ function Tareas() {
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     setTasks(savedTasks);
-  }, []); // Solo se ejecutará al montar el componente
+  }, []); 
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));

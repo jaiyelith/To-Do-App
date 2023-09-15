@@ -109,7 +109,7 @@ function Tareas() {
               onChange={handleInputChange}
             />
             <Text color="#f69195" ml="2" mr="2" fontSize="lg">
-              &bull;&nbsp;&bull;&nbsp;&bull; {/* Puntos de separación horizontales */}
+              &bull;&nbsp;&bull;&nbsp;&bull; 
             </Text>
             <Input
               type="text"
@@ -122,8 +122,8 @@ function Tareas() {
               colorScheme="pink"
               aria-label="Add Task"
               onClick={handleAddTask}
-              ml="2" // Espacio entre el cuadro de texto y el botón
-              bgColor="#ffd680" // Color del botón Añadir tarea
+              ml="2" 
+              bgColor="#ffd680" 
             >
               <AddIcon color="white" />
             </Button>
@@ -163,7 +163,7 @@ function Tareas() {
                       onClick={() => handleEditTask(index)}
                       icon={<EditIcon color="white" />}
                       ml="2"
-                      bgColor="#385a99" // Color del botón Editar
+                      bgColor="#385a99" 
                     />
                     <IconButton
                       size="sm"
@@ -172,7 +172,7 @@ function Tareas() {
                       onClick={() => handleDeleteTask(index)}
                       ml="2"
                       icon={<DeleteIcon color="white" />}
-                      bgColor="#f99190" // Color del botón Eliminar
+                      bgColor="#f99190" 
                     />
                   </>
                 ) : (
@@ -189,7 +189,7 @@ function Tareas() {
                       onClick={() => handleSaveTask(index)}
                       icon={<CheckIcon color="white" />}
                       ml="2"
-                      bgColor="#5dd55d" // Color del botón Guardar
+                      bgColor="#5dd55d" 
                     />
                     <IconButton
                       size="sm"
@@ -198,7 +198,7 @@ function Tareas() {
                       onClick={handleCancelEdit}
                       ml="2"
                       icon={<CloseIcon color="white" />}
-                      bgColor="#f99190" // Color del botón Cancelar
+                      bgColor="#f99190" 
                     />
                   </Flex>
                 )}
@@ -212,7 +212,7 @@ function Tareas() {
           ))}
         </UnorderedList>
         <Button
-          colorScheme="yellow" // Cambiado a color amarillo (#ffd58f)
+          colorScheme="yellow" 
           mt="4"
           onClick={handleClearCompleted}
         >
@@ -223,4 +223,4 @@ function Tareas() {
   );
 }
 
-export default Tareas;
+export default Tareas; 
