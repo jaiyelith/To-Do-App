@@ -45,26 +45,26 @@ function SobreNosotros() {
           <RouterLink to="/sobre-nosotros">Sobre Nosotros</RouterLink>
         </VStack>
       </Collapse>
-      <Heading color="#fad682" mt="4">
-        ¡Es hora de empezar a ser más productivo!
+      <Heading color="#fad682" mt="4" textShadow="3px 3px #3b5c92">
+        ¿Qué puedes hacer con ToDo App?
       </Heading>
       <UnorderedList mt="4" textAlign="center" listStyleType="none">
         <ListItem>✨ Crear nuevas tareas y añadir descripciones</ListItem>
         <ListItem>✨ Editar tareas</ListItem>
         <ListItem>✨ Marcar tareas como completadas</ListItem>
         <ListItem>✨ Eliminar tareas individualmente</ListItem>
-        <ListItem>✨ Eliminar todas las tareas con un solo clic</ListItem>
-        <ListItem>✨ Indicador de tareas pendientes</ListItem>
+        <ListItem>✨ Eliminar todas las tareas completadas con un solo clic</ListItem>
+        <ListItem>✨ Contar con un indicador de tareas pendientes</ListItem>
       </UnorderedList>
-      <Heading color="#f69294" mt="4">
+      <Heading color="#f69294" mt="4" textShadow="3px 1px #fed586">
         Tecnologías Utilizadas
       </Heading>
       <UnorderedList mt="4" textAlign="center" listStyleType="none">
-        <ListItem>✨ React: Biblioteca de JavaScript para construir interfaces de usuario.</ListItem>
-        <ListItem>✨ React Router: Biblioteca para el enrutamiento en aplicaciones de React.</ListItem>
-        <ListItem>✨ React Hook Form: Biblioteca para el manejo de formularios en React.</ListItem>
-        <ListItem>✨ HTML: Lenguaje de marcado para estructurar el contenido de la aplicación.</ListItem>
-        <ListItem>✨ Chakra UI: Librería de estilos para diseñar la apariencia única de la aplicación.</ListItem>
+        <ListItem>✨ <strong>React:</strong> Biblioteca de JavaScript para construir interfaces de usuario.</ListItem>
+        <ListItem>✨ <strong>React Router:</strong> Biblioteca para el enrutamiento en aplicaciones de React.</ListItem>
+        <ListItem>✨ <strong>React Hook Form:</strong> Biblioteca para el manejo de formularios en React.</ListItem>
+        <ListItem>✨ <strong>HTML:</strong> Lenguaje de marcado para estructurar el contenido de la aplicación.</ListItem>
+        <ListItem>✨ <strong>Chakra UI:</strong> Librería de diseño y componentes para crear una apariencia única y elegante en la interfaz de usuario de la aplicación.</ListItem>
       </UnorderedList>
     </Box>
   );
