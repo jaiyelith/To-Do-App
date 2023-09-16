@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Box, Heading, UnorderedList, ListItem, Link as ChakraLink, Stack, Collapse, Flex } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import MenuButton from "../components/MenuButton";
+import  { useState } from 'react';
+import {Box,Heading,UnorderedList,ListItem,VStack,Button,Collapse,Flex,useColorMode} from '@chakra-ui/react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import MenuButton from '../components/MenuButton';
+import { Link as RouterLink } from 'react-router-dom'; 
 
 function SobreNosotros() {
   const [isOpen, setIsOpen] = useState(false);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -12,7 +14,7 @@ function SobreNosotros() {
 
   return (
     <Box
-      bg="#b8e4ff"
+      bg={colorMode === 'dark' ? 'gray.800' : '#b8e4ff'}
       minH="100vh"
       display="flex"
       flexDirection="column"
@@ -21,20 +23,27 @@ function SobreNosotros() {
       padding="0"
       margin="0"
     >
-      <Flex p="4" width="100%" justifyContent="center" alignItems="center">
+      <Flex p="4" width="100%" justifyContent="space-between" alignItems="center">
         <MenuButton onClick={toggleMenu} />
+        <Button
+          onClick={toggleColorMode}
+          aria-label="Toggle Dark Mode"
+          variant="ghost"
+        >
+          {colorMode === 'light' ? <MoonIcon /> : <SunIcon color="yellow.300" />}
+        </Button>
       </Flex>
       <Collapse in={isOpen}>
-        <Stack
+        <VStack
           direction="column"
           align="center"
           spacing="4"
           position="relative"
         >
-          <Link to="/">Home</Link>
-          <Link to="/tareas">Tareas</Link>
-          <Link to="/sobre-nosotros">Sobre Nosotros</Link>
-        </Stack>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/tareas">Tareas</RouterLink>
+          <RouterLink to="/sobre-nosotros">Sobre Nosotros</RouterLink>
+        </VStack>
       </Collapse>
       <Heading color="#fad682" mt="4">
         ¡Es hora de empezar a ser más productivo!
@@ -55,13 +64,14 @@ function SobreNosotros() {
         <ListItem>✨ React Router: Biblioteca para el enrutamiento en aplicaciones de React.</ListItem>
         <ListItem>✨ React Hook Form: Biblioteca para el manejo de formularios en React.</ListItem>
         <ListItem>✨ HTML: Lenguaje de marcado para estructurar el contenido de la aplicación.</ListItem>
-        <ListItem>✨ Chakra UI: Librera de estilos para diseñar la apariencia única de la aplicación.</ListItem>
+        <ListItem>✨ Chakra UI: Librería de estilos para diseñar la apariencia única de la aplicación.</ListItem>
       </UnorderedList>
     </Box>
   );
 }
 
 export default SobreNosotros;
+
 
 
 
